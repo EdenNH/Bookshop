@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Books shop</title>
+    <link rel="stylesheet" href="lib/bs4/css/bootstrap.min.css">
+</head>
+
+<body onload="init()">
+   
+    <h1 class="text-center">Books shop</h1>
+
+    <div class="container">
+        <button class="create" onclick="readAndAddNewBook()">Create New Book</button>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="books-list"></tbody>
+        </table>
+
+    </div>
+
+<div class="modal fade" id="bookModalCenter" tabindex="-1" role="dialog" aria-labelledby="bookModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content d-flex">
+            <div class="modal-header w-100">
+                <h5 class="modal-title" id="bookModalLongTitle">Book title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body align-self-center d-flex flex-column">
+                <div class="book-details align-self-center">
+                    <span class="price"></span>$
+                </div>
+                <img class="border border-dark rounded img-fluid mt-3" src="" id="book-img" alt="book cover" />
+                <div class="rate mt-3 align-self-center">Rate:</div>
+                <div class="rate-change-container d-flex justify-content-between mt-3 w-75 align-self-center bg-light">
+                    <button class="btn btn-dark" onclick="onRateDown()">-</button>
+                    <span class="rate-txt mr-3 ml-3 p-2"></span>
+                    <button class="btn btn-dark" onclick="onRateUp()">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bs4/js/bootstrap.min.js"></script>
+    <script src="js/util-service.js"></script>
+    <script src="js/book-service.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
